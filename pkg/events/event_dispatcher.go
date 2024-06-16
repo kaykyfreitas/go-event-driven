@@ -8,6 +8,8 @@ type EventDispatcher struct {
 	handlers map[string][]EventHandlerInterface
 }
 
+var _ EventDispatcherInterface = (*EventDispatcher)(nil)
+
 func NewEventDispatcher() *EventDispatcher {
 	return &EventDispatcher{
 		handlers: make(map[string][]EventHandlerInterface),
